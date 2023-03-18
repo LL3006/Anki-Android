@@ -70,20 +70,23 @@
             android:key="@string/automatic_answer_action_preference"
             android:title="@string/timeout_answer"
             app1:useSimpleSummaryProvider="true"/>
-        <com.ichi2.preferences.SeekBarPreferenceCompat
-            android:defaultValue="20"
-            android:dependency="@string/timeout_answer_preference"
-            android:key="@string/timeout_answer_seconds_preference"
-            android:max="30"
-            android:title="@string/timeout_answer_seconds"
-            app1:summaryFormat="@string/pref_summary_seconds"/>
-        <com.ichi2.preferences.SeekBarPreferenceCompat
+        <com.ichi2.preferences.IncrementerNumberRangePreferenceCompat
             android:defaultValue="60"
             android:dependency="@string/timeout_answer_preference"
             android:key="@string/timeout_question_seconds_preference"
-            android:max="60"
+            android:summary="@string/timeout_answer_seconds_summ"
+            android:title="@string/timeout_answer_seconds"
+            app1:summaryFormat="@string/pref_summary_seconds"
+            app:max="3600"
+            app:min="0" />
+        <com.ichi2.preferences.IncrementerNumberRangePreferenceCompat
+            android:defaultValue="20"
+            android:dependency="@string/timeout_answer_preference"
+            android:key="@string/timeout_answer_seconds_preference"
             android:title="@string/timeout_question_seconds"
-            app1:summaryFormat="@string/pref_summary_seconds"/>
+            app1:summaryFormat="@string/pref_summary_seconds"
+            app:max="3600"
+            app:min="0" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/pref_cat_advanced">
         <SwitchPreference

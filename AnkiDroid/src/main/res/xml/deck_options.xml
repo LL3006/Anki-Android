@@ -156,20 +156,22 @@
                     android:key="@string/deck_options_revTimeoutAnswer_key"
                     android:summary="@string/timeout_answer_summ"
                     android:title="@string/timeout_answer_text" />
-                <com.ichi2.ui.SeekBarPreference
+                <com.ichi2.preferences.IncrementerNumberRangePreference
                     android:defaultValue="20"
                     android:dependency="@string/deck_options_revTimeoutAnswer_key"
                     android:key="@string/deck_options_revTimeoutAnswerSeconds_key"
-                    android:max="30"
                     android:summary="@string/timeout_answer_seconds_summ"
-                    android:title="@string/timeout_answer_seconds" />
-                <com.ichi2.ui.SeekBarPreference
+                    android:title="@string/timeout_answer_seconds"
+                    app:max="3600"
+                    app:min="0" />
+                <com.ichi2.preferences.IncrementerNumberRangePreference
                     android:defaultValue="60"
                     android:dependency="@string/deck_options_revTimeoutAnswer_key"
                     android:key="@string/deck_options_revTimeoutQuestionSeconds_key"
-                    android:max="60"
                     android:summary="@string/timeout_answer_seconds_summ"
-                    android:title="@string/timeout_question_seconds" />
+                    android:title="@string/timeout_question_seconds"
+                    app:max="3600"
+                    app:min="0" />
             </PreferenceCategory>
         </PreferenceScreen>
         <PreferenceScreen android:title="@string/deck_conf_lps_cards" >
